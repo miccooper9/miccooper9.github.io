@@ -5,7 +5,7 @@
   <meta name="description"
         content="Referring Everything with Video Diffusion Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReferEverything: Towards segmenting everything we can speak of in videos</title>
+  <title>ReferEverything: Towards Segmenting Everything We Can Speak of in Videos</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -98,6 +98,11 @@
     font-weight: bold;
   }
 
+  .section-title h4 {
+    font-size: 1.2rem;  /* Adjust font size for the h2 tag */
+    font-weight: bold;
+  }
+
   .section-title p {
     font-size: 1.1rem;  /* Adjust font size for the paragraph if needed */
     margin-top: 10px;
@@ -108,14 +113,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 5px;
+    color: blueviolet;
+    background-color: gainsboro; /*rgba(0, 0, 0, 0.7)*/
+    padding: 10px;
     border-radius: 3px;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    font-size: 1rem;  /* Add this line to adjust the font size */
+    font-size: 1.2rem;  /* Add this line to adjust the font size */
+    font-weight: bold;
   }
 
   .image-container:hover .hover-text {
@@ -140,28 +146,58 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ReferEverything: Towards segmenting everything we can speak of in videos</h1>
+          <h1 class="title is-1 publication-title">ReferEverything: Towards Segmenting Everything We Can Speak of in Videos</h1>
           <div class="is-size-5 publication-authors">
-            <span style="font-size:18px"><a href="https://miccooper9.github.io/">Anurag Bagchi</a></span>
+            <span style="font-size:18px"><a href="https://miccooper9.github.io/"><strong>Anurag Bagchi</strong></a></span>
             &nbsp;&nbsp;
-             <span style="font-size:18px"><a href="https://zpbao.github.io/">Zhipeng Bao</a></span>
+             <span style="font-size:18px"><a href="https://zpbao.github.io/"><strong>Zhipeng Bao</strong></a></span>
              &nbsp;&nbsp;
-              <span style="font-size:18px"><a href="https://yxw.web.illinois.edu/">Yu-Xiong Wang</a></span>
+              <span style="font-size:18px"><a href="https://yxw.web.illinois.edu/"><strong>Yu-Xiong Wang</strong></a></span>
               &nbsp;&nbsp;
-              <span style="font-size:18px"><a href="https://pvtokmakov.github.io/home/">Pavel Tokmakov</a></span>
+              <span style="font-size:18px"><a href="https://pvtokmakov.github.io/home/"><strong>Pavel Tokmakov</strong></a></span>
 							&nbsp;&nbsp;
-              <span style="font-size:18px"><a href="http://www.cs.cmu.edu/~hebert/">Martial Hebert</a></span>
+              <span style="font-size:18px"><a href="http://www.cs.cmu.edu/~hebert/"><strong>Martial Hebert</strong></a></span>
+             
           </div>
+          &nbsp;&nbsp;
 
-          <p style="text-align:center">
-                  <a href="#REM", id = "REM-link">Results Ref-VPS</a> &nbsp;/&nbsp;
-                  <a href="#dataset", id = "dataset-link">Visual Comparisons</a> &nbsp;/&nbsp;
-                  <a href="#fight", id = "fight-link">Fighting Scenes</a> 
-                  
-          </p>
+
           <div class="section-title">
-            <h3><strong>Lay mouse on any gif to show its referral expression</strong></h3>  <!-- Bold and h2 tag -->
-          </div>  
+            <h4 style="text-align:center">
+              <a href=""><strong>[Arxiv]</strong></a> &nbsp;&nbsp;
+              <a href=""><strong>[Code]</strong></a> &nbsp;&nbsp;
+              <a href=""><strong>[Data]</strong></a> 
+              
+            </h4>
+            </div>
+     
+
+          
+
+          <div class="section-title">
+              <!-- Bold and h2 tag -->
+            <p style="font-size:20px">We re-purpose large scale pretrained Text-to-Video diffusion models to <br>segment any <strong style="color: blueviolet;">spatio-temporal entity</strong> given a <strong style="color: blueviolet;">referral text</strong>. </p>
+            
+           &nbsp;&nbsp;
+           
+          </div> 
+
+          <br>
+          <p><strong style="font-size:19px" >--Hover over any gif to show its referral expression--</strong></p>
+
+
+          <!--<p style="text-align:center">
+            <a href="#REM", id = "REM-link"><strong>Overall Results</strong></a> &nbsp;/&nbsp;
+            <a href="#dataset", id = "dataset-link"><strong>Visual Comparisons</strong></a> &nbsp;/&nbsp;
+            <a href="#fight", id = "fight-link"><strong>Fighting Scenes</strong></a> 
+            
+          </p>-->
+         
+
+
+          <!--<div class="section-title">
+            <h3><strong>Hover over any gif to show its referral expression</strong></h3>  
+          </div> -->
           </div>
         </div>
       </div>
@@ -174,8 +210,8 @@
 <section class="hero", id = "REM">
   <div class="section-title">
     <h2><strong>Overall Results</strong></h2>  <!-- Bold and h2 tag -->
-    <p>Visualizations corresponding to Figure 1 in our paper.</p>
-    <p> Contains samples primarily from our Ref-VPS dataset(first three rows) and also other interesting samples outside the scope of our dataset.</p>
+   <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
+    <p> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first three rows) and  other interesting samples outside the scope of our dataset.</p>
   </div>  
 
   <div class="images-row">
@@ -212,32 +248,39 @@
   
   
   <div class="images-row">
+
     <div class="image-container">
-      <img alt="image" src="./static/teasers/tt8.gif">
-      <div class="hover-text">the bat signal and the light beam</div>
+      <img alt="image" src="./static/teasers/tt19.gif">
+      <div class="hover-text">the black moving particles</div>
     </div>
+    
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt9.gif">
       <div class="hover-text">the beam of the light</div>
     </div>
-    <div class="image-container">
-      <img alt="image" src="./static/teasers/tt10.gif">
-      <div class="hover-text">the changing beam of white light</div>
-    </div>
+
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt5.gif">
       <div class="hover-text">the green bottle of paint shattering from the impact of the ball</div>
     </div>
 
     <div class="image-container">
+      <img alt="image" src="./static/teasers/tt10.gif">
+      <div class="hover-text">the changing beam of white light</div>
+    </div>
+    
+
+    <div class="image-container">
       <img alt="image" src="./static/teasers/tt21.gif">
       <div class="hover-text">the bubble being popped</div>
     </div>
-    
+
     <div class="image-container">
-      <img alt="image" src="./static/teasers/tt15.gif">
-      <div class="hover-text">the dark changing shape in the sky</div>
+      <img alt="image" src="./static/teasers/tt22.gif">
+      <div class="hover-text">the lava flowing</div>
     </div>
+    
+   
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt4.gif">
       <div class="hover-text">the circle of the bright light</div>
@@ -255,27 +298,40 @@
       <img alt="image" src="./static/teasers/tt17.gif">
       <div class="hover-text">the tall water eruption</div>
     </div>
+
+
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt18.gif">
       <div class="hover-text">the water runing into the sink</div>
     </div>
+
+
+    <div class="image-container">
+      <img alt="image" src="./static/teasers/tt8.gif">
+      <div class="hover-text">the bat signal and the light beam</div>
+    </div>
+
+
+
    
+   
+
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt20.gif">
       <div class="hover-text">the melting glass</div>
     </div>
-    <div class="image-container">
-      <img alt="image" src="./static/teasers/tt19.gif">
-      <div class="hover-text">the black moving particles</div>
-    </div>
+   
+    
+    
    
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt2.gif">
       <div class="hover-text">the aurora</div>
     </div>
+    
     <div class="image-container">
-      <img alt="image" src="./static/teasers/tt22.gif">
-      <div class="hover-text">the lava flowing</div>
+      <img alt="image" src="./static/teasers/tt15.gif">
+      <div class="hover-text">the dark changing shape in the sky</div>
     </div>
   </div>
 
@@ -296,26 +352,29 @@
 
 
 
-  <div class="images-row">
-    <div class="image-container-3row">
-      <img alt="image" src="./static/teasers/t1.gif">
-      <div class="hover-text">the wings of the bird only</div>
-    </div>
+  <div class="images-row" style="background-color: lightgray;">
+   
     <div class="image-container-3row">
       <img alt="image" src="./static/teasers/t2.gif">
       <div class="hover-text">the legs only</div>
     </div>
     <div class="image-container-3row">
-      <img alt="image" src="./static/teasers/t3.gif">
-      <div class="hover-text">the fire</div>
+      <img alt="image" src="./static/teasers/t1.gif">
+      <div class="hover-text">the wings of the bird only</div>
     </div>
+    <div class="image-container-3row">
+      <img alt="image" src="./static/teasers/t9.gif">
+      <div class="hover-text">the small paper</div>
+    </div>
+    
   </div>
 
-  <div class="images-row">
+  <div class="images-row" style="background-color: lightgray;">
     <div class="image-container-3row">
-      <img alt="image" src="./static/teasers/t4.gif">
-      <div class="hover-text">the flames on the right</div>
+      <img alt="image" src="./static/teasers/t7.gif">
+      <div class="hover-text">the smoke dissipating</div>
     </div>
+   
     <div class="image-container-3row">
       <img alt="image" src="./static/teasers/t5.gif">
       <div class="hover-text">the hat being thrown</div>
@@ -326,19 +385,21 @@
     </div>
   </div>
 
-  <div class="images-row">
+  <div class="images-row" style="background-color: lightgray;">
+   
     <div class="image-container-3row">
-      <img alt="image" src="./static/teasers/t7.gif">
-      <div class="hover-text">the smoke dissipating</div>
+      <img alt="image" src="./static/teasers/t4.gif">
+      <div class="hover-text">the flames on the right</div>
     </div>
     <div class="image-container-3row">
       <img alt="image" src="./static/teasers/t8.gif">
       <div class="hover-text">the smoke kicked up by the car</div>
     </div>
     <div class="image-container-3row">
-      <img alt="image" src="./static/teasers/t9.gif">
-      <div class="hover-text">the small paper</div>
+      <img alt="image" src="./static/teasers/t3.gif">
+      <div class="hover-text">the fire</div>
     </div>
+    
   </div>
 
   
@@ -349,8 +410,8 @@
 
 <section class="hero", id = "dataset">
   <div class="section-title">
-    <h2><strong>Visual Comparisons</strong></h2>  <!-- Bold and h2 tag -->
-    <p>Below we show examples from <a style="color: red;">three datasets</a> (Ref-VPS, VSPW, BURST) together with visual comparisons among <a style="color: red;">three methods</a>(UNINEXT, VD-IT, Ours).</p>
+    <h2><strong><br><br>Visual Comparisons</strong></h2>  <!-- Bold and h2 tag -->
+    <p>Below we show examples from <a style="color: red;">three datasets</a> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <a style="color: red;">three methods</a> (<strong>UNINEXT</strong>, <strong>VD-IT</strong>, <strong>Ours</strong>).</p>
     
   </div>  
   
@@ -567,16 +628,13 @@
 
 
 
-  <div class="section-title">
-    <h3><strong>VSPW(stuff) results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
+  <div class="section-title"  >
+    <h3><strong><br><br>VSPW(stuff) results from <a style=" color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
   </div>  
 
- 
+  <div class="images-row" >
 
-
-  <div class="images-row">
-
-    <div class="image-container-3row">
+    <div class="image-container-3row" >
       <img alt="image" src="./static/videos/unext_bridge.gif">
       <div class="hover-text">the bridge</div>
     </div>
@@ -599,12 +657,12 @@
 
   </div>
 
-  <div class="section-title">
+  <div class="section-title" >
     <h3><strong>VSPW(stuff) results from <a style="color: red;">VD-IT</a></strong></h3>  <!-- Bold and h2 tag -->
   </div>  
 
 
-  <div class="images-row">
+  <div class="images-row" >
 
     <div class="image-container-3row">
       <img alt="image" src="./static/videos/vdit_bridge.gif">
@@ -629,12 +687,12 @@
 
   </div>
 
-  <div class="section-title">
-    <h3><strong>VSPW(stuff) results from <a style="color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
+  <div class="section-title"  >
+    <h3><strong>VSPW(stuff) results from <a style=" color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
   </div> 
 
 
-  <div class="images-row">
+  <div class="images-row" >
 
     <div class="image-container-3row">
       <img alt="image" src="./static/videos/our_bridge.gif">
@@ -662,7 +720,7 @@
 
 
   <div class="section-title">
-    <h3><strong>BURST results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
+    <h3><strong><br><br>BURST results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
   </div>  
 
 
@@ -777,24 +835,25 @@
 
 <section class="hero", id = "fight">
   <div class="section-title">
-    <h2><strong>Results on the more challenging fighting scenes</strong></h2>  <!-- Bold and h2 tag -->
+    <h2><strong><br><br>Results on the more challenging fighting scenes</strong></h2>  <!-- Bold and h2 tag -->
+    <p>Compared to the <span style="color: red; font-weight: bold;">SOTA</span>, our method <span style="color: green; font-weight: bold;">REM</span> is much better at consistently segmenting the referred entity through <strong>frequent occlusions</strong>, <strong>pov changes</strong> and <strong>distortions</strong></p>.
   </div>  
   
 
 
   <div class="images-row">
     <div class="image-container-3row">
-      <h3><strong>UNINEXT</strong></h3>
+      <h3><strong style="color: red; font-size: large; font-weight: bold;">UNINEXT</strong></h3>
       <img alt="image" src="./static/fight/uni8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
     <div class="image-container-3row">
-      <h3><strong>VD-IT</strong></h3>
+      <h3><strong style="color: red; font-size: large; font-weight: bold;">VD-IT</strong></h3>
       <img alt="image" src="./static/fight/vd8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
     <div class="image-container-3row">
-      <h3><strong>REM (Ours)</strong></h3>
+      <h3><strong style="color: green; font-size: large; font-weight: bold;">REM (Ours)</strong></h3>
       <img alt="image" src="./static/fight/our8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
