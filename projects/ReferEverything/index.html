@@ -85,11 +85,16 @@
 
   .section-title {
     text-align: center;  /* Center the title and paragraph */
-    margin-bottom: 20px;  /* Add space between title and images */
+    margin-bottom: 5px;  /* Add space between title and images */
   }
 
   .section-title h2 {
     font-size: 3rem;  /* Adjust font size for the h2 tag */
+    font-weight: bold;
+  }
+
+  .section-title h5 {
+    font-size: 2.0rem;  /* Adjust font size for the h2 tag */
     font-weight: bold;
   }
 
@@ -99,7 +104,7 @@
   }
 
   .section-title h4 {
-    font-size: 1.2rem;  /* Adjust font size for the h2 tag */
+    font-size: 1.0rem;  /* Adjust font size for the h2 tag */
     font-weight: bold;
   }
 
@@ -120,7 +125,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    font-size: 1.2rem;  /* Add this line to adjust the font size */
+    font-size: 1.05rem;  /* Add this line to adjust the font size */
     font-weight: bold;
   }
 
@@ -142,48 +147,75 @@
 
 
 <section class="hero">
+
   <div class="hero-body">
+
     <div class="container is-max-desktop">
+
       <div class="columns is-centered">
+
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ReferEverything: Towards Segmenting Everything We Can Speak of in Videos</h1>
-          <div class="is-size-5 publication-authors">
-            <span style="font-size:18px"><a href="https://miccooper9.github.io/"><strong>Anurag Bagchi</strong></a></span>
+
+          <h1 class="title is-2 publication-title">ReferEverything: Towards Segmenting Everything We Can Speak of in Videos</h1>
+          
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><a href="https://miccooper9.github.io/">Anurag Bagchi</a></span>
             &nbsp;&nbsp;
-             <span style="font-size:18px"><a href="https://zpbao.github.io/"><strong>Zhipeng Bao</strong></a></span>
+             <span class="author-block"><a href="https://zpbao.github.io/">Zhipeng Bao</a></span>
              &nbsp;&nbsp;
-              <span style="font-size:18px"><a href="https://yxw.web.illinois.edu/"><strong>Yu-Xiong Wang</strong></a></span>
+              <span class="author-block"><a href="https://yxw.web.illinois.edu/">Yu-Xiong Wang</a></span>
               &nbsp;&nbsp;
-              <span style="font-size:18px"><a href="https://pvtokmakov.github.io/home/"><strong>Pavel Tokmakov</strong></a></span>
+              <span class="author-block"><a href="https://pvtokmakov.github.io/home/">Pavel Tokmakov</a></span>
 							&nbsp;&nbsp;
-              <span style="font-size:18px"><a href="http://www.cs.cmu.edu/~hebert/"><strong>Martial Hebert</strong></a></span>
+              <span class="author-block"><a href="http://www.cs.cmu.edu/~hebert/">Martial Hebert</a></span>
              
           </div>
-          &nbsp;&nbsp;
 
+         
+          
+          <br>
 
-          <div class="section-title">
+          <div>
             <h4 style="text-align:center">
-              <a href=""><strong>[Arxiv]</strong></a> &nbsp;&nbsp;
-              <a href=""><strong>[Code]</strong></a> &nbsp;&nbsp;
-              <a href=""><strong>[Data]</strong></a> 
+              <a href="" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"> 
+                <i class = "ai ai-arxiv">
+                </i>
+              </span>
+              <span>arXiv</span>
+              </a> &nbsp;&nbsp;
+              <a href="" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                </span>
+                <span>Code</span>
+              </a> &nbsp;&nbsp;
+              <a href="" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"> 
+                  <svg class="svg-inline--fa fa-database fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z"></path></svg>
+                </span>
+
+                <span>Data</span>
+              </a> 
               
             </h4>
             </div>
+
+            <br>
      
 
           
 
-          <div class="section-title">
+          <div>
               <!-- Bold and h2 tag -->
-            <p style="font-size:20px">We re-purpose large scale pretrained Text-to-Video diffusion models to <br>segment any <strong style="color: blueviolet;">spatio-temporal entity</strong> given a <strong style="color: blueviolet;">referral text</strong>. </p>
-            
-           &nbsp;&nbsp;
+            <p style="font-size:18px">We re-purpose Text-to-Video diffusion models to segment  any <strong style="color: blueviolet;">spatio-temporal entity</strong> given a <strong style="color: blueviolet;">referral text</strong>.</p>
+            <p><strong style="font-size:18px">Hover over any gif to show its referral expression</strong></p>
+           
            
           </div> 
 
-          <br>
-          <p><strong style="font-size:19px" >--Hover over any gif to show its referral expression--</strong></p>
+
+         
 
 
           <!--<p style="text-align:center">
@@ -208,11 +240,7 @@
 
 
 <section class="hero", id = "REM">
-  <div class="section-title">
-    <h2><strong>Overall Results</strong></h2>  <!-- Bold and h2 tag -->
-   <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
-    <p> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first three rows) and  other interesting samples outside the scope of our dataset.</p>
-  </div>  
+  
 
   <div class="images-row">
     <div class="image-container">
@@ -322,8 +350,6 @@
     </div>
    
     
-    
-   
     <div class="image-container">
       <img alt="image" src="./static/teasers/tt2.gif">
       <div class="hover-text">the aurora</div>
@@ -405,18 +431,241 @@
   
 </section>
 
+<div class="section-title" style="background-color: gainsboro;">
+  <!--<h5><strong>Overall Results</strong></h5>-->  <!-- Bold and h2 tag -->
+ <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
+  <p> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first three rows) and  other interesting samples outside the scope of our dataset.</p>
+</div>  
+
 
 
 
 <section class="hero", id = "dataset">
   <div class="section-title">
-    <h2><strong><br><br>Visual Comparisons</strong></h2>  <!-- Bold and h2 tag -->
-    <p>Below we show examples from <a style="color: red;">three datasets</a> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <a style="color: red;">three methods</a> (<strong>UNINEXT</strong>, <strong>VD-IT</strong>, <strong>Ours</strong>).</p>
+    <h2><strong><br><br>Visual Comparisons : <span style="color: red;">SOTA</span> vs  <span style="color: green;">REM(Ours)</span></strong></h2>  <!-- Bold and h2 tag -->
+    <p>Below we show examples from <strong>three datasets</strong> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <strong>three methods</strong> (<strong style="color: red;">UNINEXT</strong>, <strong style="color: red;">VD-IT</strong>, <strong style="color: green;">Ours</strong>).</p>
     
   </div>  
+
+  <div class="section-title">
+    <h3><strong>BURST results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div>  
+
+
+  <div class="images-row">
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_sponge.gif">
+      <div class="hover-text">the sponge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_calendar.gif">
+      <div class="hover-text">the calendar</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_backpack.gif">
+      <div class="hover-text">the backpack</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_can.gif">
+      <div class="hover-text">the can</div>
+    </div>
+
+
+  </div>
+  
+
+
+
+
+
+
+
+
+ 
+
+  <div class="section-title">
+    <h3><strong>BURST results from <a style="color: red;">VD-IT</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div>  
+
+
+  <div class="images-row">
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_sponge.gif">
+      <div class="hover-text">the sponge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_calendar.gif">
+      <div class="hover-text">the calendar</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_backpack.gif">
+      <div class="hover-text">the backpack</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_can.gif">
+      <div class="hover-text">the can</div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+ 
+
+ 
+  <div class="section-title">
+    <h3><strong>BURST results from <a style="color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div> 
+
+
+
+  <div class="images-row">
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_sponge.gif">
+      <div class="hover-text">the sponge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_calendar.gif">
+      <div class="hover-text">the calendar</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_backpack.gif">
+      <div class="hover-text">the backpack</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_can.gif">
+      <div class="hover-text">the can</div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <div class="section-title"  >
+    <h3><strong><br><br><br>VSPW(stuff) results from <a style=" color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div>  
+
+  <div class="images-row" >
+
+    <div class="image-container-3row" >
+      <img alt="image" src="./static/videos/unext_bridge.gif">
+      <div class="hover-text">the bridge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_building.gif">
+      <div class="hover-text">the building</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_wall.gif">
+      <div class="hover-text">the wall</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/unext_house.gif">
+      <div class="hover-text">the house</div>
+    </div>
+
+
+  </div>
+
+  <div class="section-title" >
+    <h3><strong>VSPW(stuff) results from <a style="color: red;">VD-IT</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div>  
+
+
+  <div class="images-row" >
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_bridge.gif">
+      <div class="hover-text">the bridge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_building.gif">
+      <div class="hover-text">the building</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_wall.gif">
+      <div class="hover-text">the wall</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/vdit_house.gif">
+      <div class="hover-text">the house</div>
+    </div>
+
+
+  </div>
+
+  <div class="section-title"  >
+    <h3><strong>VSPW(stuff) results from <a style=" color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
+  </div> 
+
+
+  <div class="images-row" >
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_bridge.gif">
+      <div class="hover-text">the bridge</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_building.gif">
+      <div class="hover-text">the building</div>
+    </div>
+    
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_wall.gif">
+      <div class="hover-text">the wall</div>
+    </div>
+
+    <div class="image-container-3row">
+      <img alt="image" src="./static/videos/our_house.gif">
+      <div class="hover-text">the house</div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   <div class="section-title">
-    <h3><strong>Ref-VPS results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
+    <h3><strong><br><br><br>Ref-VPS results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
   </div>  
 
 
@@ -628,214 +877,17 @@
 
 
 
-  <div class="section-title"  >
-    <h3><strong><br><br>VSPW(stuff) results from <a style=" color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div>  
-
-  <div class="images-row" >
-
-    <div class="image-container-3row" >
-      <img alt="image" src="./static/videos/unext_bridge.gif">
-      <div class="hover-text">the bridge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_building.gif">
-      <div class="hover-text">the building</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_wall.gif">
-      <div class="hover-text">the wall</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_house.gif">
-      <div class="hover-text">the house</div>
-    </div>
-
-
-  </div>
-
-  <div class="section-title" >
-    <h3><strong>VSPW(stuff) results from <a style="color: red;">VD-IT</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div>  
-
-
-  <div class="images-row" >
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_bridge.gif">
-      <div class="hover-text">the bridge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_building.gif">
-      <div class="hover-text">the building</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_wall.gif">
-      <div class="hover-text">the wall</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_house.gif">
-      <div class="hover-text">the house</div>
-    </div>
-
-
-  </div>
-
-  <div class="section-title"  >
-    <h3><strong>VSPW(stuff) results from <a style=" color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div> 
-
-
-  <div class="images-row" >
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_bridge.gif">
-      <div class="hover-text">the bridge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_building.gif">
-      <div class="hover-text">the building</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_wall.gif">
-      <div class="hover-text">the wall</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_house.gif">
-      <div class="hover-text">the house</div>
-    </div>
-
-
-  </div>
-
-
-
-  <div class="section-title">
-    <h3><strong><br><br>BURST results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div>  
-
-
-  <div class="images-row">
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_sponge.gif">
-      <div class="hover-text">the sponge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_calendar.gif">
-      <div class="hover-text">the calendar</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_backpack.gif">
-      <div class="hover-text">the backpack</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/unext_can.gif">
-      <div class="hover-text">the can</div>
-    </div>
-
-
-  </div>
   
 
 
-
-
-
-
-
-
- 
-
-  <div class="section-title">
-    <h3><strong>BURST results from <a style="color: red;">VD-IT</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div>  
-
-
-  <div class="images-row">
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_sponge.gif">
-      <div class="hover-text">the sponge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_calendar.gif">
-      <div class="hover-text">the calendar</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_backpack.gif">
-      <div class="hover-text">the backpack</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/vdit_can.gif">
-      <div class="hover-text">the can</div>
-    </div>
-
-
-  </div>
-
-
-
-
-
-
-
-
- 
-
- 
-  <div class="section-title">
-    <h3><strong>BURST results from <a style="color: red;">REM (Ours)</a></strong></h3>  <!-- Bold and h2 tag -->
-  </div> 
-
-
-
-  <div class="images-row">
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_sponge.gif">
-      <div class="hover-text">the sponge</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_calendar.gif">
-      <div class="hover-text">the calendar</div>
-    </div>
-    
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_backpack.gif">
-      <div class="hover-text">the backpack</div>
-    </div>
-
-    <div class="image-container-3row">
-      <img alt="image" src="./static/videos/our_can.gif">
-      <div class="hover-text">the can</div>
-    </div>
-
-
-  </div>
+  
     
 </section>
 
 
 <section class="hero", id = "fight">
   <div class="section-title">
-    <h2><strong><br><br>Results on the more challenging fighting scenes</strong></h2>  <!-- Bold and h2 tag -->
+    <h2><strong><br><br>Results on highly challenging fighting scenes</strong></h2>  <!-- Bold and h2 tag -->
     <p>Compared to the <span style="color: red; font-weight: bold;">SOTA</span>, our method <span style="color: green; font-weight: bold;">REM</span> is much better at consistently segmenting the referred entity through <strong>frequent occlusions</strong>, <strong>pov changes</strong> and <strong>distortions</strong></p>.
   </div>  
   
