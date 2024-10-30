@@ -41,6 +41,10 @@
 
 <!-- Custom CSS -->
 <style>
+
+  .gap {
+     margin-bottom: 15px; /* Adjust this value for the desired gap */
+    }
   .images-row {
     display: flex;  /* Aligns the images side by side */
     justify-content: space-between;  /* Adds space between the images */
@@ -203,9 +207,13 @@
              
           </div>
 
+        
+
+          
+
          
           
-          <br>
+          
 
           <div>
             <h4 style="text-align:center">
@@ -233,16 +241,15 @@
             </h4>
             </div>
 
-            <br>
+            
      
 
-          
+          <br>
 
           <div>
               <!-- Bold and h2 tag -->
             <p style="font-size:18px">We re-purpose Text-to-Video diffusion models to segment  any <strong style="color: blueviolet;">spatio-temporal entity</strong> given a <strong style="color: blueviolet;">referral text</strong>.</p>
-            <p><strong style="font-size:18px">Hover over any gif to show its referral expression</strong></p>
-           
+            <p><strong style="font-size:18px;">Hover over any GIF to display the input text prompt for the predicted mask</strong></p>
            
           </div> 
 
@@ -641,7 +648,7 @@
 <div class="section-title" style="background-color: gainsboro;">
   <!--<h5><strong>Overall Results</strong></h5>-->  <!-- Bold and h2 tag -->
  <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
-  <p> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first three rows) and  other interesting samples outside the scope of our dataset.</p>
+  <p style="font-size: 20px;"> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first 4 rows) and  other interesting samples outside the scope of our dataset.</p>
 </div>  
 
 
@@ -650,9 +657,11 @@
 <section class="hero", id = "dataset">
   <div class="section-title">
     <h2><strong><br><br>Visual Comparisons - <span style="color: red;">SOTA</span> vs  <span style="color: green;">REM (Ours)</span></strong></h2>  <!-- Bold and h2 tag -->
-    <p>Below we show examples from <strong>three datasets</strong> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <strong>three methods</strong> (<strong style="color: red;">UNINEXT</strong>, <strong style="color: red;">VD-IT</strong>, <strong style="color: green;">Ours</strong>).</p>
+    <p style="background-color: gainsboro;">Below we show examples from <strong>three datasets</strong> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <strong>three methods</strong> (<strong style="color: red;">UNINEXT</strong>, <strong style="color: red;">VD-IT</strong>, <strong style="color: green;">Ours</strong>).</p>
     
-  </div>  
+  </div> 
+  
+  <br>
 
   <div class="section-title">
     <h3><strong>BURST results from <a style="color: red;">UNINEXT</a></strong></h3>  <!-- Bold and h2 tag -->
@@ -1154,24 +1163,24 @@
 <section class="hero", id = "fight">
   <div class="section-title">
     <h2><strong><br><br>Results on highly challenging fighting scenes</strong></h2>  <!-- Bold and h2 tag -->
-    <p>Compared to the <span style="color: red; font-weight: bold;">SOTA</span>, our method <span style="color: green; font-weight: bold;">REM</span> is much better at consistently segmenting the referred entity through <strong>frequent occlusions</strong>, <strong>pov changes</strong> and <strong>distortions</strong></p>.
+    <p style="background-color: gainsboro;">Compared to the <span style="color: red; font-weight: bold;">SOTA</span>, our method <span style="color: green; font-weight: bold;">REM</span> is much better at consistently segmenting the referred entity through <strong>frequent occlusions</strong>, <strong>pov changes</strong> and <strong>distortions</strong></p>.
   </div>  
   
 
 
   <div class="images-row">
     <div class="image-container-3row">
-      <h3><strong style="color: red; font-size: large; font-weight: bold;">UNINEXT</strong></h3>
+      <h3><strong style="color: red; font-size: 25px; font-weight: bold;">UNINEXT</strong></h3>
       <img alt="image" src="./static/fight/uni8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
     <div class="image-container-3row">
-      <h3><strong style="color: red; font-size: large; font-weight: bold;">VD-IT</strong></h3>
+      <h3><strong style="color: red; font-size: 25px; font-weight: bold;">VD-IT</strong></h3>
       <img alt="image" src="./static/fight/vd8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
     <div class="image-container-3row">
-      <h3><strong style="color: green; font-size: large; font-weight: bold;">REM (Ours)</strong></h3>
+      <h3><strong style="color: green; font-size: 25px; font-weight: bold;">REM (Ours)</strong></h3>
       <img alt="image" src="./static/fight/our8.gif">
       <div class="hover-text">the man with white hair</div>
     </div>
