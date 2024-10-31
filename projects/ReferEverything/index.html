@@ -647,14 +647,31 @@
   <!--<h5><strong>Overall Results</strong></h5>-->  <!-- Bold and h2 tag -->
  <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
   <p style="font-size: 20px;"> Results from our eval-only benchmark <strong> Ref-VPS </strong> (first 4 rows) and  other interesting samples outside the scope of our dataset.</p>
-</div>  
+</div> 
+
+<br>
+<br>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-three-fifths">
+    <h2 class=" title is-2">Abstract</h2>
+    <div class="content has-text-justified">
+      <!--<h5><strong>Overall Results</strong></h5>-->  <!-- Bold and h2 tag -->
+    <!-- <p> Visualizations corresponding to <strong>Figure 1</strong> in our paper.</p>-->
+      <p style="font-size:20px;"> 
+        We present <b>REM</b>, a framework for segmenting a wide range of concepts in video that can be described through natural language. Our method capitalizes on visual-language representations learned by video diffusion models on Internet-scale datasets. A key insight of our approach is preserving as much of the generative model's original representation as possible, while fine-tuning it on narrow-domain Referral Object Segmentation datasets. As a result, <b style="color:rgb(49, 125, 224)">our framework can accurately segment and track rare and unseen objects, despite being trained on object masks from a limited set of categories. Additionally, it can generalize to non-object dynamic concepts, such as waves crashing in the ocean, as demonstrated in our newly introduced eval-only benchmark for Referral Video Process Segmentation (Ref-VPS)</b>. Our experiments show that REM performs on par with state-of-the-art approaches on in-domain datasets, like Ref-DAVIS, while outperforming them by up to twelve points in terms of region similarity on out-of-domain data, leveraging the power of Internet-scale pre-training.
+      </p>
+    </div> 
+  </div>
+</div>
 
 
 
 
 <section class="hero", id = "dataset">
   <div class="section-title">
-    <h2><strong><br><br>Visual Comparisons - <span style="color: red;">SOTA</span> vs  <span style="color: green;">REM (Ours)</span></strong></h2>  <!-- Bold and h2 tag -->
+    <h2><strong><br>Visual Comparisons - <span style="color: red;">SOTA</span> vs  <span style="color: green;">REM (Ours)</span></strong></h2>  <!-- Bold and h2 tag -->
     <p style="background-color: gainsboro;">Below we show examples from <strong>three datasets</strong> (<strong>Ref-VPS</strong>, <strong>VSPW</strong>, <strong>BURST</strong>) together with visual comparisons among <strong>three methods</strong> (<strong style="color: red;">UNINEXT</strong>, <strong style="color: red;">VD-IT</strong>, <strong style="color: green;">Ours</strong>).</p>
     
   </div> 
