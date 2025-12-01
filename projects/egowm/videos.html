@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images and GIFs Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        header h3 {
+            margin: 5px 0 0;
+            font-weight: normal;
+            color: #000;
+        }
+        .intro-text {
+            background: #f2f2f2;
+            padding: 20px 30px;
+            border-radius: 8px;
+            border: 2px solid #000;
+            margin: 20px auto 30px;
+            max-width: 1000px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+        .section-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 40px;
+            flex-wrap: wrap;
+        }
+        .section-nav-btn {
+            background: #4A90E2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .section-nav-btn:hover {
+            background: #357ABD;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* ---- FIX APPLIED HERE ---- */
+        .row {
+            display: flex;
+            justify-content: center;   /* center entire row */
+            gap: 25px;
+            margin-bottom: 25px;
+            align-items: center;
+            flex-wrap: wrap;           /* supports variable number of columns */
+        }
+
+        .cell {
+            text-align: center;
+        }
+
+        .col-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        img, video {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        .subtext {
+            max-width: 900px;
+            margin: 10px auto 25px;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+            text-align: center;
+
+            background: #f2f2f2;      /* light gray highlight */
+            padding: 12px 18px;       /* spacing inside the box */
+            border-radius: 6px;       /* rounded corners */
+            border: 1px solid #ddd;   /* subtle border */
+        }
+        .group-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .group-box {
+            display: flex;
+            gap: 25px;
+            padding: 12px;
+            border: 3px solid #4A90E2;
+            border-radius: 10px;
+        }
+
+        /* Scrollable row container for paintings section */
+        .paintings-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .paintings-rows-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paintings-row {
+            display: none;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 10px 0;
+        }
+
+        .paintings-row.active {
+            display: block;
+        }
+
+        .paintings-row .row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 0;
+            align-items: center;
+            flex-wrap: nowrap;
+            min-width: max-content;
+            padding: 0 20px;
+        }
+
+        .paintings-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .paintings-row::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .paintings-row::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .paintings-row::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .paintings-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .paintings-nav-btn {
+            background: #4A90E2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .paintings-nav-btn:hover {
+            background: #357ABD;
+        }
+
+        .paintings-nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .paintings-dots {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .paintings-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .paintings-dot.active {
+            background: #4A90E2;
+            width: 14px;
+            height: 14px;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Ego-centric Action-Conditioned Video World Models</h1>
+    <h3>Anurag Bagchi<sup>1</sup>, Zhipeng Bao<sup>1</sup>, Homanga Bharadhwaj<sup>2</sup>, Yu-Xiong Wang<sup>3</sup>, Pavel Tokmakov<sup>4</sup>, Martial Hebert<sup>1</sup></h3>
+    <h3 style="font-size: 18px; margin-top: 5px; font-weight: normal;"><sup>1</sup>Carnegie Mellon University, <sup>2</sup>JHU, <sup>3</sup>UIUC, <sup>4</sup>TRI</h3>
+</header>
+
+<!--
+<div class="intro-text">
+    What if a video generation model could not only imagine a plausible future, 
+but the correct one — accurately reflecting how the world changes with each action? 
+    We answer this by presenting a simple, architecture-agnostic method that transforms <b>Any (Unet or DiT/ Temporally compressed)</b> pre-trained video diffusion model into an action-conditioned world model, enabling controllable prediction of the future. 
+    Rather than training from scratch, we re-purpose the rich world priors of Internet-scale video models, injecting motor commands through lightweight conditioning layers. 
+    This allows the resulting model to follow actions faithfully while preserving generalization and realism. 
+    Our approach scales naturally across embodiments and action spaces — from <b>3-DoF mobile robots to 25-DoF humanoids</b>, where predicting egocentric joint-angle–driven video dynamics is substantially more challenging. The model produces coherent, multi-step rollouts for both navigation and manipulation tasks, requiring only modest fine-tuning. To evaluate physical correctness independent of appearance, we introduce the Structural Consistency Score (SCS), which measures whether stable scene elements evolve consistently with the provided actions. Our method improves SCS by up to 80% over prior state-of-the-art (Navigation Wolrd Models) while exhibiting upto <b>6x lower latency</b> and generalizing robustly to unseen environments — including navigation in unrealistic scenarios such as inside paintings
+</div>
+-->
+<div class="intro-text" style="text-align: center;">
+   <span style="font-size: 20px;"><b>Tl;DR</b> : We finetune any pre-trained video diffusion model <b>(U-Net or DiT/ Temporally compressed or Not)</b> to follow <b>action trajectories</b> with action-spaces ranging from <b>3-DoF Position Control</b> to <b>25-DoF 1x EVE Humanoid Joint Angle Control</b>, to generate <b>egocentric</b> videos of <b>navigation</b>  and <b>manipulation</b> tasks.</span>
+    <br>
+    <br>
+    <br>
+    <span style="font-size: 20px;"><b> <span style="color: #c62828;">Input</span> : Initial Frame (I<sub>0</sub>) + Action Trajectory (A <sub>1:T</sub>)  → <span style="color: #2832c6;">Output</span> : Future Frames (I<sub>1:T</sub>)</b></span>
+</div>
+
+<div class="section-nav">
+
+    <button class="section-nav-btn" onclick="scrollToSection(1)">Navigate Paintings</button>
+    <button class="section-nav-btn" onclick="scrollToSection(2)">Navigate Real-World using 3 or 25-DoF Control</button>
+    <button class="section-nav-btn" onclick="scrollToSection(3.2)">25-DoF Humanoid Controlled Manipulation</button>
+    <button class="section-nav-btn" onclick="scrollToSection(4)">Comparisons with NWM</button>
+</div>
+
+<section>
+    <h2 style="text-align:center;">[1] Zero-shot Generalisation to Paintings!</h2>
+    <p class="subtext">
+    We select some <b>unseen action trajectories</b> from real-world data, and apply that to highly <b>OOD paintings as initial frames</b> to see the egocentric navigation or joint-control action acted out in the painting.
+    <br>
+    <!-- <span style="font-size: 20px;">The action trajectory is shown on the left of each row in a reference video to illustrate what the action should look like from the ego view and the predictions are shown to its right.</span> -->
+    <b><span style="font-size: 19px;"><span style="color: #c62828;">[Unseen Action Trajectory Illustrated in Real Video]</span>     →  Predicted Video in <span style="color: #2832c6;">[Painting 1] [Painting 2] ...</span></span></b>
+    </p>
+    
+
+
+    <h3 style="text-align:center;">[1.1] 3-DoF Position Control</h3>
+
+    <div class="paintings-container" id="paintings-3dof">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./paintings/paint1/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Prediction 1</div>
+                                <video src="./paintings/paint1/pred_1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 2</div>
+                                <video src="./paintings/paint1/pred_24.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 3</div>
+                                <video src="./paintings/paint1/pred_8.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 4</div>
+                                <video src="./paintings/paint1/pred_35.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./paintings/paint3/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+                    
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Prediction 1</div>
+                                <video src="./paintings/paint3/pred_28.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 2</div>
+                                <video src="./paintings/paint3/pred_22.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 3</div>
+                                <video src="./paintings/paint3/pred_8.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 4</div>
+                                <video src="./paintings/paint3/pred_35.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./paintings/paint2/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Prediction 1</div>
+                                <video src="./paintings/paint2/pred_4.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 2</div>
+                                <video src="./paintings/paint2/pred_6.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 3</div>
+                                <video src="./paintings/paint2/pred_8.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction 4</div>
+                                <video src="./paintings/paint2/pred_10.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('paintings-3dof', -1)">← Previous</button>
+            <div class="paintings-dots" id="paintings-3dof-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('paintings-3dof', 1)">Next →</button>
+        </div>
+    </div>
+
+
+    <h3 style="text-align:center;">[1.2] Look down and see yourself ! 25-DoF Joint Angle Control</h3>
+    <p class="subtext">
+        <b><span style="font-size: 18px;"><span style="color: #c62828;">[Unseen Action Trajectory Illustrated in Real Video]</span>     →  Predicted Video in <span style="color: #2832c6;">[Painting 1] [Painting 2]</span></span></b>
+    </p>
+
+     <div class="row">
+
+        <div class="cell">
+            <div class="col-title">Unseen Reference Action</div>
+            <video src="./paintings/paint_25dof/GT.mp4"autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="cell group-wrapper">
+            <div class="group-box">
+                <div class="cell">
+                    <div class="col-title">Prediction 1</div>
+                    <video src="./paintings/paint_25dof/pred_34.mp4" autoplay loop muted playsinline></video>
+                </div>
+
+                <div class="cell">
+                    <div class="col-title">Prediction 2</div>
+                    <video src="./paintings/paint_25dof/pred_7.mp4" autoplay loop muted playsinline></video>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <h2 style="text-align:center;">[2] Zero-shot Generalisation to Real-World Images Captured by Us</h2>
+
+    <p class="subtext">
+    Here we select some <b>unseen action trajectories</b> from real-world data, and apply that to <b>unseen images captured by us</b> in our surroundings,  to see the egocentric navigation acted out in unseen real-world scenes. 
+    
+    <br>
+    <b><span style="font-size: 18px;"><span style="color: #c62828;">[Unseen Action Trajectory Illustrated in Real Video]</span>     →  <span style="color: #2832c6;">[Initial Image] [Predicted Video]</span></span></b>
+    </p>
+
+
+
+    <h3 style="text-align:center;">[2.1] 3-DoF Position Control</h3>
+
+    <div class="paintings-container" id="realw-3dof">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw3dof/GT1.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw3dof/rw_1.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw3dof/pred_1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw3dof/GT2.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw3dof/rw_2.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw3dof/pred_2.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('realw-3dof', -1)">← Previous</button>
+            <div class="paintings-dots" id="realw-3dof-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('realw-3dof', 1)">Next →</button>
+        </div>
+    </div>
+
+    <h3 style="text-align:center;">[2.2] 25-DoF Joint Angle control</h3>
+    <p class="subtext">
+        <b><span style="font-size: 18px;"><span style="color: #c62828;">[Unseen Action Trajectory Illustrated in Real Video]</span>     →  <span style="color: #2832c6;">[Initial Image 1] [Predicted Video 1] ...</span></span></b>
+    </p>
+
+    <div class="paintings-container" id="realw-25dof">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw/rw1/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw1/rw_2.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw1/pred_2.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw1/rw_5.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw1/pred_5.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw/rw2/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw2/rw_2.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw2/pred_2.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw2/rw_5.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw2/pred_5.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw/rw3/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw3/rw_6.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw3/pred_6.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw3/rw_5.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw3/pred_5.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell">
+                        <div class="col-title">Unseen Reference Action</div>
+                        <video src="./realw/rw4/GT.mp4"autoplay loop muted playsinline></video>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw4/rw_4.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw4/pred_4.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial frame</div>
+                                <img src="./realw/rw4/rw_9.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Prediction</div>
+                                <video src="./realw/rw4/pred_9.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('realw-25dof', -1)">← Previous</button>
+            <div class="paintings-dots" id="realw-25dof-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('realw-25dof', 1)">Next →</button>
+        </div>
+    </div>
+    
+</section>
+
+<section>
+    <h2 style="text-align:center;">[3] 25-DoF Humanoid Joint Angle Control Results on 1x Validation Set</h2>
+
+
+    <p class="subtext">
+    Here we show <b>25-DoF</b> joint angle action trajectory controlled humanoid <b>navigation</b> and <b>manipulation</b> results on the <b>val set</b> of the <b>1x dataset</b> and compare with the groundtruth videos for the same <b>unseen</b> action trajectories.
+    </p>
+
+    <h3 style="text-align:center;">[3.1] Navigation</h3>
+
+    <div class="paintings-container" id="nav-1x">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_nav/GT1.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_nav/GT1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./1x_nav/pred1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_nav/GT3.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_nav/GT3.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./1x_nav/pred3.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('nav-1x', -1)">← Previous</button>
+            <div class="paintings-dots" id="nav-1x-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('nav-1x', 1)">Next →</button>
+        </div>
+    </div>
+
+    <h3 style="text-align:center;">[3.2] Manipulation</h3>
+
+    <div class="paintings-container" id="manip-1x">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT1.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred1.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT6.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT6.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred6.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT3.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT3.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred3.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT4.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT4.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred4.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT5.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT5.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred5.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT2.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT2.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred2.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                    <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT9.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT9.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred9.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./1x_manipulation/GT8.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./1x_manipulation/GT8.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./1x_manipulation/pred8.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('manip-1x', -1)">← Previous</button>
+            <div class="paintings-dots" id="manip-1x-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('manip-1x', 1)">Next →</button>
+        </div>
+    </div>
+
+    <h2 style="text-align:center;">[4] 3-DoF Position Control Comparison on RECON Test Set</h2>
+    <p class="subtext">
+    Here we show <b>3-DoF position trajectory</b> controled navigation results on the <b>test set</b> of <b>RECON</b>. In each row we compare, the groundtruth video and predicted video by us and <a href="https://www.amirbar.net/nwm/" target="_blank">Navigation World Model</a> (NWM) for the same <b>unseen</b> action trajectory.
+    </p>
+
+    <div class="paintings-container" id="recon-cmp">
+        <div class="paintings-rows-wrapper">
+            <div class="paintings-row active">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./cmp_recon/sample1/GT.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./cmp_recon/sample1/GT.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./cmp_recon/sample1/svd.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./cmp_recon/sample1/cosmos.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">NWM</div>
+                                <video src="./cmp_recon/sample1/nwm.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./cmp_recon/sample2/GT.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./cmp_recon/sample2/GT.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./cmp_recon/sample2/svd.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./cmp_recon/sample2/cosmos.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">NWM</div>
+                                <video src="./cmp_recon/sample2/nwm.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./cmp_recon/sample3/GT.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./cmp_recon/sample3/GT.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./cmp_recon/sample3/svd.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./cmp_recon/sample3/cosmos.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">NWM</div>
+                                <video src="./cmp_recon/sample3/nwm.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paintings-row">
+                <div class="row">
+                    <div class="cell group-wrapper">
+                        <div class="group-box">
+                            <div class="cell">
+                                <div class="col-title">Initial Frame <span style="color: #c62828;">+ Action Traj.</span></div>
+                                <img src="./cmp_recon/sample4/GT.png">
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">GT Video</div>
+                                <video src="./cmp_recon/sample4/GT.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (SVD)</div>
+                                <video src="./cmp_recon/sample4/svd.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">Ours (Cosmos)</div>
+                                <video src="./cmp_recon/sample4/cosmos.mp4" autoplay loop muted playsinline></video>
+                            </div>
+
+                            <div class="cell">
+                                <div class="col-title">NWM</div>
+                                <video src="./cmp_recon/sample4/nwm.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paintings-nav">
+            <button class="paintings-nav-btn" onclick="navigatePaintings('recon-cmp', -1)">← Previous</button>
+            <div class="paintings-dots" id="recon-cmp-dots"></div>
+            <button class="paintings-nav-btn" onclick="navigatePaintings('recon-cmp', 1)">Next →</button>
+        </div>
+    </div>
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+</section>
+
+<script>
+    // Function to scroll to a specific section
+    function scrollToSection(sectionNumber) {
+        // Check if it's a subsection (has decimal point)
+        if (sectionNumber.toString().includes('.')) {
+            const h3Elements = document.querySelectorAll('h3');
+            for (let h3 of h3Elements) {
+                if (h3.textContent.includes('[' + sectionNumber + ']')) {
+                    h3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+            }
+        } else {
+            const h2Elements = document.querySelectorAll('h2');
+            for (let h2 of h2Elements) {
+                if (h2.textContent.includes('[' + sectionNumber + ']')) {
+                    h2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+            }
+        }
+    }
+
+    // Initialize dots for all paintings containers
+    document.addEventListener('DOMContentLoaded', function() {
+        initializePaintingsContainer('paintings-3dof');
+        initializePaintingsContainer('realw-3dof');
+        initializePaintingsContainer('realw-25dof');
+        initializePaintingsContainer('nav-1x');
+        initializePaintingsContainer('manip-1x');
+        initializePaintingsContainer('recon-cmp');
+    });
+
+    function initializePaintingsContainer(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const rows = container.querySelectorAll('.paintings-row');
+        const dotsContainer = container.querySelector('.paintings-dots');
+        
+        if (!dotsContainer || rows.length === 0) return;
+        
+        // Clear existing dots
+        dotsContainer.innerHTML = '';
+        
+        // Create dots
+        rows.forEach((row, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'paintings-dot' + (index === 0 ? ' active' : '');
+            dot.onclick = () => goToPaintingsRow(containerId, index);
+            dotsContainer.appendChild(dot);
+        });
+        
+        // Initialize button states
+        const prevBtn = container.querySelector('.paintings-nav-btn');
+        const nextBtn = container.querySelectorAll('.paintings-nav-btn')[1];
+        
+        if (prevBtn) prevBtn.disabled = true; // First row, disable previous
+        if (nextBtn && rows.length > 1) nextBtn.disabled = false;
+        if (nextBtn && rows.length === 1) nextBtn.disabled = true;
+    }
+
+    function navigatePaintings(containerId, direction) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const rows = container.querySelectorAll('.paintings-row');
+        if (rows.length === 0) return;
+        
+        let currentIndex = -1;
+        rows.forEach((row, index) => {
+            if (row.classList.contains('active')) {
+                currentIndex = index;
+            }
+        });
+        
+        if (currentIndex === -1) return;
+        
+        const newIndex = currentIndex + direction;
+        if (newIndex >= 0 && newIndex < rows.length) {
+            goToPaintingsRow(containerId, newIndex);
+        }
+    }
+
+    function goToPaintingsRow(containerId, index) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const rows = container.querySelectorAll('.paintings-row');
+        const dots = container.querySelectorAll('.paintings-dot');
+        
+        if (index < 0 || index >= rows.length) return;
+        
+        // Update active row
+        rows.forEach((row, i) => {
+            if (i === index) {
+                row.classList.add('active');
+            } else {
+                row.classList.remove('active');
+            }
+        });
+        
+        // Update active dot
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        // Update button states
+        const prevBtn = container.querySelector('.paintings-nav-btn');
+        const nextBtn = container.querySelectorAll('.paintings-nav-btn')[1];
+        
+        if (prevBtn) prevBtn.disabled = (index === 0);
+        if (nextBtn) nextBtn.disabled = (index === rows.length - 1);
+    }
+</script>
+
+</body>
+</html>
